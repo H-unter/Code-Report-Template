@@ -24,3 +24,13 @@ Remove-Item -Path "report\code" -Recurse -Force
 
 Write-Host "Submodule 'report' removed successfully, .gitmodules file deleted, and specified files and folders removed from 'report' directory."
 ```
+Note to self: this is how you can update the submodule:
+```powershell
+git submodule update --init --recursive
+cd report
+git fetch
+git checkout main
+git pull
+cd ..
+git add report
+```
